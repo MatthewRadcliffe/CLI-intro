@@ -1,0 +1,22 @@
+{
+  "name": "CLI-intro",
+  "version": "1.0.0",
+  "description": "Command Line tool version bump",
+  "main": "Index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MatthewRadcliffe/CLI-intro.git"
+  },
+  "author": "Matthew Radcliffe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MatthewRadcliffe/CLI-intro/issues"
+  },
+  "homepage": "https://github.com/MatthewRadcliffe/CLI-intro"
+}
