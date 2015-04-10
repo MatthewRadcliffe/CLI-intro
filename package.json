@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "babel src --out-dir lib",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/MatthewRadcliffe/CLI-intro/issues"
   },
-  "homepage": "https://github.com/MatthewRadcliffe/CLI-intro"
+  "homepage": "https://github.com/MatthewRadcliffe/CLI-intro",
+  "devDependencies": {
+    "babel": "^5.0.12",
+    "mocha": "^2.2.4"
+  }
 }
