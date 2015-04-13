@@ -22,6 +22,7 @@
   "homepage": "https://github.com/MatthewRadcliffe/CLI-intro",
   "devDependencies": {
     "babel": "^5.0.12",
-    "mocha": "^2.2.4"
+    "mocha": "^2.2.4",
+    "semver": "^4.3.3"
   }
 }

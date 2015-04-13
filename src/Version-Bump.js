@@ -1,13 +1,13 @@
-
-
 class VersionBumper {
-    
     Bump(currentVersion, type, preid) {
-        var updatedVersion;
+        let semver = require('semver');
+        let newVersion = semver.inc(currentVersion, type, preid);
+
+        if(!semver.gt(newVersion, currentVersion)) {
+            throw new Error('Older Version');
+        }
         
-        //Code goes here - updates version number
-        
-        return updatedVersion;
+        return newVersion;
     }
 }
 
