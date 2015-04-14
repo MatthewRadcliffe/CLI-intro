@@ -1,8 +1,10 @@
-//import semver from 'semver';
+import semver from 'semver';
+import assert from 'assert';
 import VersionBumper from "../src/Version-Bump.js";
+
 let vb = new VersionBumper();
-let semver = require('semver')
-let assert = require("assert")
+//let semver = require('semver')
+//let assert = require("assert")
 
 describe('Version Bump Tests', function(){
     let oldVersion = '1.3.7-beta.2';
