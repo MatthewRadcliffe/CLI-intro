@@ -1,7 +1,7 @@
 {
 	"name": "CLI-intro",
-	"version": "4.0.0",
-	"description": "Command Line tool version bump",
+	"version": "32.0.0",
+	"description": "Command line tool for version bumping",
 	"main": "Index.js",
 	"directories": {
 		"test": "test"
@@ -22,9 +22,11 @@
 	"homepage": "https://github.com/MatthewRadcliffe/CLI-intro",
 	"devDependencies": {
 		"babel": "^5.1.9",
+		"child-process-promise": "^1.0.2",
 		"commander": "^2.8.0",
 		"fs-extra": "^0.18.0",
 		"fs-promise": "^0.3.1",
+		"gh-release": "^1.1.7",
 		"mocha": "^2.2.4",
 		"semver": "^4.3.3"
 	}
