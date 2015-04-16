@@ -9,7 +9,6 @@ let vb = new VersionBumper();
 describe('Version Bump Tests', function(){
     let oldVersion = '1.3.7-beta.2';
     describe('Pre-release Tests', function() {
-        
         describe('Pre bump Tests', function() {
             let prepatch = vb.Bump(oldVersion, 'pre');
             it('Valid pre bump tests', function() {
@@ -17,11 +16,7 @@ describe('Version Bump Tests', function(){
                 assert.equal(true, semver.gt(prepatch, oldVersion));
             })
             it('Invalid pre bump tests', function() {
-                try {
-                    vb.Bump(oldVersion, 'pre', 'alpha');   
-                } catch (err) {
-                    assert.equal(err.message, "Older Version");
-                }
+                assert.throws(() => {vb.Bump(oldVersion, 'pre', 'alpha')}, Error, 'Bumped to an older version');
             })
         })
         
@@ -32,11 +27,7 @@ describe('Version Bump Tests', function(){
                 assert.equal(true, semver.gt(prepatch, oldVersion));
             })
             it('Invalid pre-patch tests', function() {
-                try {
-                    vb.Bump(oldVersion, 'prepatch', 'alpha');   
-                } catch (err) {
-                    assert.equal(err.message, "Older Version");
-                }
+                assert.throws(() => {vb.Bump(oldVersion, 'prepatch', 'alpha')}, Error, 'Bumped to an older version');
             })
         })
         
@@ -47,11 +38,7 @@ describe('Version Bump Tests', function(){
                 assert.equal(true, semver.gt(preminor, oldVersion));
             })
             it('Invalid pre-minor tests', function() {
-                try {
-                    vb.Bump(oldVersion, 'preminor', 'alpha');   
-                } catch (err) {
-                    assert.equal(err.message, "Older Version");
-                }
+                assert.throws(() => {vb.Bump(oldVersion, 'preminor', 'alpha')}, Error, 'Bumped to an older version');
             })
         })
         
@@ -81,7 +68,7 @@ describe('Version Bump Tests', function(){
                 
         })
     })
-    
+        
     describe('Minor Bump Tests', function() {
         let minor = vb.Bump(oldVersion, 'minor');
         it('Valid minor bump tests', function() {
@@ -106,19 +93,22 @@ describe('Version Bump Tests', function(){
     
     describe('Error Tests', function() {
       it('Invalid version', function() {
-          try {
-              vb.Bump('a.b.c', 'major');
-          } catch(err) {
-              assert.equal(err.message, 'Invalid Version: null');
-          }
+          assert.throws(() => {vb.Bump('a.b.c', 'major')}, Error, 'Did not throw invalid version');
       })
       it('Invalid type', function() {
-          try {
-              vb.Bump(oldVersion, 'preprepatch', 'omega');
-          } catch(err) {
-              assert.equal(err.message, 'Invalid Version: null');
-          }
+          assert.throws(() => {vb.Bump(oldVersion, 'preprepatch', 'omega')}, Error, 'Did not throw invalid version');
       })
+    })
+})
+
+describe('Commander Tests', function(){
+    describe('Argument parsing', function() {
+        it('Test release bump with dry-run command', function() {
+            
+        })
+        it('Test prerelease bump with dry-run command', function() {
+            
+        })
     })
 })
     
