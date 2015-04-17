@@ -1,4 +1,4 @@
-import VersionBumper from "../lib/Version-Bump.js";
+import Bump from '../lib/Version-Bump.js';
 import commander from 'commander';
 import pjson from '../package.json';
 import fsp from 'fs-promise';
@@ -11,7 +11,7 @@ export default function Parse(args) {
         .option('-d, --dry', 'Dry run')
         .arguments('<bumpType> [preid]')
         .action(function(bumpType, preid) {
-            pjson.version = vb.Bump(pjson.version, bumpType, preid);
+            pjson.version = Bump(pjson.version, bumpType, preid);
             fsp.writeFile('package.json', JSON.stringify(pjson, null, '\t'))
                 .then(() => exec(`git add package.json`))
                 .then(() => exec(`git commit -m "Release v.${pjson.version}"`))

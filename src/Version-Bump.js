@@ -5,7 +5,7 @@ export default function Bump(currentVersion, type, preid) {
     let newVersion = semver.inc(currentVersion, type, preid);
 
     if(!semver.gt(newVersion, currentVersion)) {
-        throw new Error('Older Version');
+        throw new Error("Older Version");
     }
     return newVersion;
 }
