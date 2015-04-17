@@ -3,7 +3,6 @@ import commander from 'commander';
 import pjson from '../package.json';
 import fsp from 'fs-promise';
 import {exec} from 'child-process-promise';
-let vb = new VersionBumper();
 
 export default function Parse(args) {
     commander
@@ -25,7 +24,11 @@ export default function Parse(args) {
                                 }
                             })
                 .then(() => exec(`echo release`))
-                .then(() => exec(`echo Publishing`));
+                .then(() => exec(`echo Publishing`))
+                .catch(error => {
+                                console.Error('ERROR: ', error);
+                                process.exit(1);
+                });
     });
 
     commander.on('--help', function() {
@@ -36,5 +39,5 @@ export default function Parse(args) {
         console.log('   major --dry');
     });
 
-    commander.parse(args);
+    return commander.parse(args);
 }

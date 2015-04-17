@@ -1,4 +1,4 @@
-import semver from 'semver';
+import semver from 'Semver';
 import assert from 'assert';
 import Bump from "../src/Version-Bump.js";
 import Parse from "../src/Parser.js";
@@ -50,11 +50,7 @@ describe('Version Bump Tests', function(){
                 assert.equal(true, semver.gt(premajor, oldVersion));
             })
             it('Invalid pre-major tests', function() {
-                try {
-                    Bump(oldVersion, 'premajor', 'alpha');   
-                } catch (err) {
-                    assert.equal(err.message, "Older Version");
-                }
+                assert.throws(() => {Bump(oldVersion, 'premajor', 'alpha')}, Error, 'Bumped to an older version');
             })
         })
     })
@@ -105,8 +101,8 @@ describe('Version Bump Tests', function(){
 describe('Commander Tests', function(){
     describe('Argument parsing', function() {
         it('Test release bump with dry-run command', function() {
-            let args = [];
-            Parse(args);
+//            let args = [];
+//            Parse(args);
         })
         it('Test prerelease bump with dry-run command', function() {
             

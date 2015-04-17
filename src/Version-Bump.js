@@ -1,7 +1,7 @@
-import semver from 'semver';
+import semver from 'Semver';
 
 export default function Bump(currentVersion, type, preid) {
-    //Need to add code to handle exceptions gracefully
+    //Need t add code to handle exceptions gracefully
     let newVersion = semver.inc(currentVersion, type, preid);
 
     if(!semver.gt(newVersion, currentVersion)) {

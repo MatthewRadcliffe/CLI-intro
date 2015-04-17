@@ -1,33 +1,33 @@
 {
-	"name": "CLI-intro",
-	"version": "47.6.0",
-	"description": "Command line tool for version bumping",
-	"main": "Index.js",
-	"directories": {
-		"test": "test"
-	},
-	"scripts": {
-		"build": "babel src --out-dir lib",
-		"test": "mocha"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/MatthewRadcliffe/CLI-intro.git"
-	},
-	"author": "Matthew Radcliffe",
-	"license": "ISC",
-	"bugs": {
-		"url": "https://github.com/MatthewRadcliffe/CLI-intro/issues"
-	},
-	"homepage": "https://github.com/MatthewRadcliffe/CLI-intro",
-	"devDependencies": {
-		"babel": "^5.1.9",
-		"child-process-promise": "^1.0.2",
-		"commander": "^2.8.0",
-		"fs-extra": "^0.18.0",
-		"fs-promise": "^0.3.1",
-		"gh-release": "^1.1.7",
-		"mocha": "^2.2.4",
-		"semver": "^4.3.3"
-	}
+  "name": "CLI-intro",
+  "version": "7.6.0",
+  "description": "Command line tool for version bumping",
+  "main": "Index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "babel src --out-dir lib",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MatthewRadcliffe/CLI-intro.git"
+  },
+  "author": "Matthew Radcliffe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MatthewRadcliffe/CLI-intro/issues"
+  },
+  "homepage": "https://github.com/MatthewRadcliffe/CLI-intro",
+  "devDependencies": {
+    "babel": "^5.1.10",
+    "child-process-promise": "^1.0.2",
+    "commander": "^2.8.0",
+    "fs-extra": "^0.18.2",
+    "fs-promise": "^0.3.1",
+    "gh-release": "^1.1.7",
+    "mocha": "^2.2.4",
+    "semver": "^4.3.3"
+  }
 }
